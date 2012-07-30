@@ -1,10 +1,10 @@
 require 'json'
 
-class StreetName
+class Street
   attr_accessor :name, :postcode, :area
 
   def to_json
-    { :name => self.name }.to_json
+    { :name => name, :postcode => postcode }.to_json
   end
 
 end

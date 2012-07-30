@@ -1,2 +1,2 @@
-require './lib/street_name'
+require './lib/street'
 
