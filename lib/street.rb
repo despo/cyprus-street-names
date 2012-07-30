@@ -9,7 +9,11 @@ class Street
   end
 
   def to_json
-    { :name => name, :postcode => postcode, :area => area }.to_json
+    to_hash.to_json
+  end
+
+  def to_hash
+    { :name => name, :postcode => postcode, :area => area }
   end
 
   private
