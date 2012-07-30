@@ -23,6 +23,12 @@ describe StreetNames::Parser do
 
         street_parser.find_by_street_name("Dimosthenous Georgiou").map(&:to_json).should include street.to_json
       end
+
+      it 'find area by street name' do
+        street = { :name => "Dimosthenous Georgiou", :postcode => 8020, :area => "Pafos"}
+
+        street_parser.find_by_area("Pafos").map(&:to_json).should include street.to_json
+      end
     end
   end
 

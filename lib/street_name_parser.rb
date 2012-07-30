@@ -23,6 +23,10 @@ module StreetNames
       @streets.select { |street| street.name == street_name }
     end
 
+    def find_by_area area
+      @streets.select { |street| street.area == area }
+    end
+
     private
     def spreadsheet
       @spreadsheet ||= Spreadsheet.open("./data/cyprus_postcode_dir_#{@locale}.xls")
