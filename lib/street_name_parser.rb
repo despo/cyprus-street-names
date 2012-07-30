@@ -1,4 +1,5 @@
 require 'street'
+require 'street_names'
 module StreetNames
 
   class Parser
@@ -19,6 +20,15 @@ module StreetNames
       define_method(:"find_by_#{key}") do |value|
         @streets.select { |street| eval("street.#{key}") == value }
       end
+    end
+
+    def save!
+      db = StreetNames::Database.new
+      db.save! :streets => @streets.map(&:to_hash)
+    end
+
+    def load_from_pstore
+      StreetNames::Database.new.load_streets
     end
 
     private
