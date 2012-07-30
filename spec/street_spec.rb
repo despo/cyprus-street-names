@@ -1,11 +1,7 @@
 require 'spec_helper'
 describe Street do
   let(:street) do |street|
-    street = Street.new
-    street.name = 'Some street'
-    street.postcode = '8021'
-    street.area = 'Pafos'
-    street
+    Street.new [ 'Some street', '8021', 'Pafos' ]
   end
 
   it 'sends the name as json' do
@@ -13,7 +9,7 @@ describe Street do
   end
 
   it 'sends the postcode as json' do
-    street.to_json.should include "\"postcode\":\"8021\""
+    street.to_json.should include "\"postcode\":8021"
   end
 
   it 'sends the area as json' do
