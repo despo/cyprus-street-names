@@ -4,6 +4,7 @@ describe Street do
     street = Street.new
     street.name = 'Some street'
     street.postcode = '8021'
+    street.area = 'Pafos'
     street
   end
 
@@ -13,6 +14,10 @@ describe Street do
 
   it 'sends the postcode as json' do
     street.to_json.should include "\"postcode\":\"8021\""
+  end
+
+  it 'sends the area as json' do
+    street.to_json.should include "\"area\":\"Pafos\""
   end
 
 end
