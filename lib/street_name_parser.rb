@@ -15,16 +15,10 @@ module StreetNames
       end.inject(:+)
     end
 
-    def find_by_postcode postcode
-      @streets.select { |street| street.postcode == postcode }
-    end
-
-    def find_by_street_name street_name
-      @streets.select { |street| street.name == street_name }
-    end
-
-    def find_by_area area
-      @streets.select { |street| street.area == area }
+    [ :postcode, :name, :area ].each do |key|
+      define_method(:"find_by_#{key}") do |value|
+        @streets.select { |street| eval("street.#{key}") == value }
+      end
     end
 
     private
