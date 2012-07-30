@@ -1,7 +1,4 @@
-require 'street'
-require 'street_names'
 module StreetNames
-
   class Parser
 
     attr_reader :streets
@@ -23,12 +20,12 @@ module StreetNames
     end
 
     def save!
-      db = StreetNames::Database.new
+      db = ::Database.new
       db.save! :streets => @streets.map(&:to_hash)
     end
 
     def load_from_pstore
-      StreetNames::Database.new.load_streets
+      ::Database.new.load_streets
     end
 
     private
@@ -37,6 +34,4 @@ module StreetNames
     end
 
   end
-
-  CITIES = { :paphos =>  8, :larnaca => 7, :limassol => 6, :lefkosia => 5 }
 end
