@@ -5,14 +5,16 @@ class StreetNameParser < SpreadsheetParser
              :lefkosia => 5,
              :rural_areas => 9 }
 
-  def self.load locale="en", city="paphos"
+  def self.load locale="en"
     Spreadsheet.open("./data/cyprus_postcode_dir_#{locale}.xls") do |spreadsheet|
-      return spreadsheet.worksheets[CITIES[city.to_sym]].map {|parameters| Street.new parameters }
+      CITIES.each_value.map do |city|
+        spreadsheet.worksheets[city].map {|parameters| Street.new parameters }
+      end.inject(:+)
     end
   end
 
   def self.find_by_postcode postcode=8020
-    streets = StreetNameParser.load "en", "paphos"
+    streets = StreetNameParser.load "en"
     streets.select { |street| street.postcode == postcode }
   end
 
