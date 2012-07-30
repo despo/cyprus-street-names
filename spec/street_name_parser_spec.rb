@@ -12,21 +12,17 @@ describe StreetNames::Parser do
     end
 
     context '#finders' do
-      it 'find streets by postcode' do
-        street = { :name => "Dimosthenous Georgiou", :postcode => 8020, :area => "Pafos"}
+      let(:street) { {  :name => "Dimosthenous Georgiou", :postcode => 8020, :area => "Pafos"} }
 
+      it 'find streets by postcode' do
         street_parser.find_by_postcode(8020).map(&:to_json).should include street.to_json
       end
 
       it 'find street  by street name' do
-        street = { :name => "Dimosthenous Georgiou", :postcode => 8020, :area => "Pafos"}
-
         street_parser.find_by_street_name("Dimosthenous Georgiou").map(&:to_json).should include street.to_json
       end
 
       it 'find area by street name' do
-        street = { :name => "Dimosthenous Georgiou", :postcode => 8020, :area => "Pafos"}
-
         street_parser.find_by_area("Pafos").map(&:to_json).should include street.to_json
       end
     end
