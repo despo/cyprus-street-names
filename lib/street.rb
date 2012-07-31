@@ -1,7 +1,7 @@
 require 'json'
 
 class Street
-  attr_accessor :name, :postcode, :area
+  attr_reader :name, :postcode, :area
 
   def initialize params=nil
     parse_parameters(params) unless params.nil?
@@ -17,9 +17,9 @@ class Street
 
   private
   def parse_parameters params
-    self.name = params[0]
-    self.postcode = params[1].to_i
-    self.area = params[2]
+    @name = params[0]
+    @postcode = params[1].to_i
+    @area = params[2]
   end
 
 end
