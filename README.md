@@ -1,7 +1,7 @@
 # Cyprus Street Finder
 [![Build Status](https://secure.travis-ci.org/despo/cyprus-street-finder.png)](http://travis-ci.org/despo/cyprus-street-finder) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/despo/cyprus-street-finder)
 
-#### Data from ![Cyprus Postal Services] (http://www.mcw.gov.cy/mcw/dps/dps.nsf/index_en/index_en?opendocument)
+#### Data from [Cyprus Postal Services]
 
 ## Usage
 
@@ -31,3 +31,4 @@ street_finder.find_by_area "Πάφος"
 Licensed under the [MIT] Licence
 
 [MIT]:https://raw.github.com/despo/cyprus-street-finder/master/MIT-LICENSE.txt
+[Cyprus Postal Services]:http://www.mcw.gov.cy/mcw/dps/dps.nsf/index_en/index_en?opendocument
