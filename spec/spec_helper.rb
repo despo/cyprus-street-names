@@ -1,2 +1,3 @@
-require './lib/street_names'
-require './lib/street'
+$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
+require 'street_names'
+require 'street'

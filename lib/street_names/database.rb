@@ -21,7 +21,7 @@ module StreetNames
     end
 
     def path
-      "./data/street_names_#{@locale}.dat"
+      File.join(File.dirname(__FILE__), "..", "..", "data", "street_names_#{@locale}.dat")
     end
 
   end
