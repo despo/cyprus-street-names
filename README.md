@@ -7,6 +7,8 @@
 
 ### Finding streets
 
+`require 'street_names'`
+
 ```ruby
 street_finder = StreetNames::Finder.new
 
