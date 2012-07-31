@@ -1,3 +1,4 @@
+require 'spreadsheet'
 module StreetNames
   class Parser
 
@@ -20,7 +21,7 @@ module StreetNames
     end
 
     def save!
-      db = ::Database.new
+      db = StreetNames::Database.new
       db.save! :streets => @streets.map(&:to_hash)
     end
 
