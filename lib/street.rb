@@ -1,5 +1,4 @@
 require 'json'
-require 'spreadsheet'
 
 class Street
   attr_accessor :name, :postcode, :area
