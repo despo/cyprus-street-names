@@ -6,8 +6,7 @@ describe StreetNames::Database do
   let(:database) { StreetNames::Database.new }
 
   before(:all) do
-    `rm ./spec/database.dat`
-    database.should_receive(:path).and_return("./spec/database.dat")
+    `rm ./data/street_names.dat`
   end
 
   it 'is nil' do
@@ -25,4 +24,7 @@ describe StreetNames::Database do
     database.load_streets.should == streets
   end
 
+  after(:all) do
+    `git checkout data/street_names.dat`
+  end
 end

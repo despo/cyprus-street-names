@@ -3,7 +3,7 @@ module StreetNames
 
     attr_reader :streets
 
-    def initialize locale="en"
+    def initialize locale=LOCALE
       @locale = locale
     end
 

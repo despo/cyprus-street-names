@@ -1,5 +1,6 @@
 require 'spec_helper'
 describe StreetNames::Parser do
+
   describe 'parsing' do
     let (:street_parser) { StreetNames::Parser.new }
 
