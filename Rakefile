@@ -1,3 +1,12 @@
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.rspec_path = 'rspec'
+  t.rspec_opts = ["-cfd"]
+end
+
+task :default => :spec
+
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift File.dirname($LOAD_PATH.first)
 require 'street_names'
