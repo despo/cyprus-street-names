@@ -13,6 +13,10 @@ module StreetNames
       end
     end
 
+    def all
+      @streets
+    end
+
     private
 
     def convert!

@@ -44,4 +44,9 @@ describe StreetNames::Finder do
     end
   end
 
+  context 'retrieve all' do
+    it 'can retrieve all street names', :wip => true do
+      street_finder.all.length.should eq 13752
+    end
+  end
 end
