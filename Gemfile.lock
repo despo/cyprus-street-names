@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    cyprus-street-names (0.1.0)
+      spreadsheet (~> 0.7.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -19,6 +25,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cyprus-street-names!
   rake
-  rspec
-  spreadsheet
+  rspec (~> 2.11.0)
