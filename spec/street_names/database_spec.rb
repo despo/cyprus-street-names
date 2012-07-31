@@ -2,29 +2,18 @@ require 'spec_helper'
 
 describe StreetNames::Database do
 
-  let(:streets) { [ { :name => "Road A" }, { :name => "Road B" }, { :name => "Not road C"} ] }
-  let(:database) { StreetNames::Database.new }
-
-  before(:all) do
-    `rm ./data/street_names.dat`
-  end
-
-  it 'is nil' do
-    database.load_streets.should == nil
-  end
+  let(:database) { StreetNames::Database.new "en" }
 
   it 'can store a hash of streets' do
-    database.save! :streets =>  streets
+    datastore = mock
+    database.should_receive(:datastore).and_return(datastore)
+    datastore.should_receive(:transaction)
 
-    database.load_streets.should == streets
+    database.save! :streets => :streets
   end
 
   it 'can retrieve a hash of streets' do
-
-    database.load_streets.should == streets
+    database.load_streets.first.should be_a Hash
   end
 
-  after(:all) do
-    `git checkout data/street_names.dat`
-  end
 end

@@ -15,15 +15,14 @@ module StreetNames
       datastore.transaction { datastore[:"streets_#{@locale}"] = data[:streets] }
     end
 
-    def path
-      "./data/street_names.dat"
-    end
-
     private
     def datastore
       @datastore ||= PStore.new(path)
     end
 
+    def path
+      "./data/street_names_#{@locale}.dat"
+    end
 
   end
 end

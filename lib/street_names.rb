@@ -1,5 +1,6 @@
 require 'street_names/parser'
 require 'street_names/database'
+require 'street_names/finder'
 
 module StreetNames
 

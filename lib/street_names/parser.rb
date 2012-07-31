@@ -14,14 +14,8 @@ module StreetNames
       end.inject(:+)
     end
 
-    [ :postcode, :name, :area ].each do |key|
-      define_method(:"find_by_#{key}") do |value|
-        @streets.select { |street| eval("street.#{key}") == value }
-      end
-    end
-
     def save!
-      db = StreetNames::Database.new
+      db = StreetNames::Database.new @locale
       db.save! :streets => @streets.map(&:to_hash)
     end
 
