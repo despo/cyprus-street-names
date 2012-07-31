@@ -24,10 +24,10 @@ street_finder.find_by_name "Δημοσθένους Γεωργίου"
 street_finder.find_by_area "Πάφος"
 ```
 
-**Note:** you may need to add *#encoding: utf-8* to the top of your file when searching using Greek characters
+**Note:** you may need to add `#encoding: utf-8` to the top of your file when searching using Greek characters`
 
 ## License
 
-[MIT]
+Licensed under the [MIT] Licence
 
 [MIT]:https://raw.github.com/despo/cyprus-paf/master/MIT-LICENSE.txt
