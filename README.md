@@ -10,21 +10,21 @@
 ```ruby
 street_finder = StreetNames::Finder.new
 
-street_finder.find_by_postcode postcode
-street_finder.find_by_name "Demostheni Georgiou"
+street_finder.find_by_postcode 8020
+street_finder.find_by_name "Demosthenous Georgiou"
 street_finder.find_by_area "Pafos"
 ```
 #### Search στα Ελληνικά
 
 ```ruby
-street_finder = StreetNames::Finder.new "gr" # or load in greek
+street_finder = StreetNames::Finder.new "gr" # load greek datastore
 
 street_finder.find_by_postcode 8020
 street_finder.find_by_name "Δημοσθένους Γεωργίου"
 street_finder.find_by_area "Πάφος"
 ```
 
-**Note:** you may need to add `#encoding: utf-8` to the top of your file when searching using Greek characters`
+**Note:** you may need to add `#encoding: utf-8` to the top of your file when searching using Greek characters
 
 ## License
 
