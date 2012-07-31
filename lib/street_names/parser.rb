@@ -25,10 +25,6 @@ module StreetNames
       db.save! :streets => @streets.map(&:to_hash)
     end
 
-    def load_from_pstore
-      ::Database.new.load_streets
-    end
-
     private
     def spreadsheet
       @spreadsheet ||= Spreadsheet.open("./data/cyprus_postcode_dir_#{@locale}.xls")
