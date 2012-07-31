@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.author      = "Despo Pentara"
   s.email       = "despo@extractmethod.com"
-  s.homepage    = "https://github.com/despo/cyprus-paf"
+  s.homepage    = "https://github.com/despo/cyprus-street-names"
   s.summary     = "Cyprus's Street Names."
   s.description = "Cyprus's Street Names."
   s.required_ruby_version = '>= 1.9.2'
